@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+  	<package name="default" extends="struts-default">
+  		<interceptors>
+			<interceptor name="loginInterceptor" class="com.all.interceptor.adminQueryProAllInterceptor"/>
+			<interceptor name="cusLoginInterceptor" class="com.all.interceptor.CustomerLoginInterceptor"/>
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="cusLoginInterceptor"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+		
+		<global-results>
+		    <result name="login">/Skip/Foreground_skip5.jsp</result>
+		    <result name="adminLogin">/Manage/Main_login.jsp</result>
+		</global-results>
+ 		<!-- 注册登录Action配置二 -->
+ 		<action name="adminLoginAction" class="adminLoginAction">
+ 			<result name="success">/Manage/Main.jsp</result>
+ 			<result name="input">/Manage/Main_login.jsp</result>
+ 		</action>
+ 		<action name="adminQueryAllAction" class="adminQueryAllAction">
+ 			<result name="success">/Manage/Main_right_QueryCusWord.jsp</result>
+ 			<result name="input">/Manage/Main_right_QueryCusWord.jsp</result>
+ 		</action>
+ 		<action name="adminDeleteWordAction" class="adminDeleteWordAction">
+ 			<result name="success">/Manage/Main_right_Customerword.jsp</result>
+ 			<result name="input">/Manage/Main_right_Customerword.jsp</result>
+ 		</action>
+ 		<action name="adminQueryByNameAction" class="adminQueryByNameAction">
+ 			<result name="success">/Manage/Main_right_QueryCustomerword.jsp</result>
+ 			<result name="input">/Manage/Main_right_QueryCustomerword.jsp</result>
+ 			<result name="failed">/Manage/Manage_skip3.jsp</result>
+ 		</action>
+ 		<action name="exitAction" class="com.admin.action.ExitAction">
+ 			<result name="success">/Manage/Main_login.jsp</result>
+ 		</action>
+ 		<action name="adminQueryCusInfAction" class="adminQueryCusInfAction">
+ 			<result name="success">/Manage/Main_right_QueryCusInf.jsp</result>
+ 			<result name="input">/Manage/Main_right_QueryCusInf.jsp</result>
+ 		</action>
+ 		<action name="adminQueryCusInfByNameAction" class="adminQueryCusInfByNameAction">
+ 			<result name="success">/Manage/Main_right_QueryCusInf.jsp</result>
+ 			<result name="input">/Manage/Main_right_QueryCusInf.jsp</result>
+ 		</action>
+ 		<action name="adminDeleteCusInfAction" class="adminDeleteCusInfAction">
+ 			<result name="success">/Manage/Main_right_QueryCusInf.jsp</result>
+ 			<result name="input">/Manage/Main_right_QueryCusInf.jsp</result>
+ 		</action>
+ 		<action name="adminCheckImgAction" class="adminCheckImgAction">
+ 			<result name="success">/Manage/Main.jsp</result>
+ 			<result name="input">/Manage/Main_login.jsp</result>
+ 		</action>
+ 		<action name="updateAdminAction" class="updateAdminAction">
+ 			<result name="success">/Manage/Manage_skip4.jsp</result>
+ 			<result name="input">/Manage/Main_right_UpdateAdminInf2.jsp</result>
+ 		</action>
+ 		<action name="queryAdminAction" class="queryAdminAction">
+ 			<interceptor-ref name="loginInterceptor"/>			
+			<interceptor-ref name="defaultStack"/>
+			<result name="login">/Manage/Main_login.jsp</result>
+ 			<result name="success">/Manage/Main_right_UpdateAdminInf2.jsp</result>
+ 			<result name="input">/Manage/Main_right_UpdateAdminInf2.jsp</result>
+ 		</action>
+ 		<action name="adminChangePwdAction" class="adminChangePwdAction">
+ 			<result name="success">/Manage/Main_login.jsp</result>
+ 			<result name="input">/Manage/Main_right_AdminChangePwd.jsp</result>
+ 		</action>
+ 		<action name="adminAddProduct" class="adminAddProduct">
+ 			<param name="savePath">F:\MY9.0\works1\SSH_Final\WebRoot\img\product</param>
+ 			<result name="success">/Manage/Manage_skip11.jsp</result>
+ 			<result name="input">/Manage/Manage_skip12.jsp</result>
+ 		</action>
+ 		<action name="adminQueryProType" class="adminQueryProType">
+ 			<interceptor-ref name="loginInterceptor"/>			
+			<interceptor-ref name="defaultStack"/>
+			<result name="login">/Manage/Main_login.jsp</result>
+ 		</action>
+ 		<action name="adminQueryTypeName" class="adminQueryTypeName" >
+ 			<result name="success">/Manage/Main_right_AddProduct.jsp</result>
+ 			<result name="input">/Manage/Main_right_AddProduct.jsp</result>
+ 		</action>
+ 		<action name="adminAddTypeMethod" class="adminAddTypeMethod" >
+ 			<result name="success">/Manage/Manage_skip7.jsp</result>
+ 			<result name="input">/Manage/Manage_skip8.jsp</result>
+ 		</action>
+ 		<action name="adminAddTypeName" class="adminAddTypeName" >
+ 			<result name="success">/Manage/Manage_skip9.jsp</result>
+ 			<result name="input">/Manage/Manage_skip10.jsp</result>
+ 		</action>
+ 		<action name="adminQueryProType1" class="adminQueryProType" method="QueryProType">
+			<result name="success">/Manage/Main_right_AddProductType.jsp</result>
+ 		</action>
+ 		<action name="adminAddProQuery" class="adminAddProQuery" >
+ 			<result name="success">/Manage/Main_right_AddProductType.jsp</result>
+ 			<result name="input">/Manage/Main_right_AddProductType.jsp</result>
+ 		</action>
+ 		<action name="adminQueryProAll" class="adminQueryProAll" >
+ 			<result name="success">/Manage/Main_right_QueryProInf.jsp</result>
+ 			<result name="input">/Manage/Main_right_QueryProInf.jsp</result>
+ 		</action>
+ 		<action name="adminQueryProAll0" class="adminQueryProAll" >
+ 			<interceptor-ref name="loginInterceptor"/>			
+			<interceptor-ref name="defaultStack"/>
+			<result name="login">/Manage/Main_login.jsp</result>
+ 			<result name="success">/Manage/Main_right_ChangeProInf.jsp</result>
+ 			<result name="input">/Manage/Main_right_ChangeProInf.jsp</result>			
+ 		</action>
+ 		<action name="adminQueryProById" class="adminQueryProById" >
+ 			<result name="success">/Manage/Main_right_ProDetail.jsp</result>
+ 			<result name="input">/Manage/Main_right_ProDetail.jsp</result>
+ 		</action>
+ 		<action name="adminQueryTypeName0" class="adminQueryTypeName" method="updatePro">
+ 			<result name="success">/Manage/Main_right_ProDetail.jsp</result>
+ 			<result name="input">/Manage/Main_right_ProDetail.jsp</result>
+ 		</action>
+ 		<action name="updateAdminProduct" class="updateAdminProduct" >
+ 			<param name="savePath">F:\MY9.0\works1\SSH_Final\WebRoot\img\product</param>
+ 			<result name="success">/Manage/Main.jsp</result>
+ 			<result name="input">/Manage/Main_right_ProDetail.jsp</result>
+ 		</action>
+ 		<action name="adminQueryProType0" class="adminQueryProType" method="QueryProType1">
+			<result name="success">/Manage/Main_right_ProDetail.jsp</result>
+ 		</action>
+ 		<action name="adminDeleteProduct" class="adminDeleteProduct">
+			<result name="success">/Manage/Main.jsp</result>
+			<result name="input">/Manage/Main.jsp</result>
+ 		</action>
+ 		<action name="adminSumOfOrder" class="adminSumOfOrder">
+			<result name="success">/Manage/Main_right_sumOfOrder.jsp</result>
+			<result name="failed">/Manage/Manage_skip1.jsp</result>
+			<result name="input">/Manage/Manage_skip2.jsp</result>
+ 		</action>
+ 		<action name="queryP" class="adminSumOfOrder" method="queryP">
+		</action>
+		<action name="adminQueryAllUser" class="adminQueryAllUser" >
+			<result name="success">/Manage/Main_right_QueryRole.jsp</result>
+			<result name="input">/Manage/Main_right_QueryRole.jsp</result>
+		</action>
+		<action name="deleteAdminById" class="deleteAdminById" >
+			<result name="success" type="redirectAction">
+				<param name="actionName">adminQueryAllUser</param>
+			</result>
+		</action>
+		<action name="queryAdminById" class="queryAdminById" >
+			<result name="success">/Manage/Main_right_UpdateAdminInf.jsp</result>
+			<result name="input">/Manage/Main_right_UpdateAdminInf.jsp</result>
+		</action>
+ 		<action name="adminQueryProTypeAll" class="adminQueryProTypeAll">
+			<result name="success">/Manage/Main_right_DeleteProType.jsp</result>
+ 		</action>
+ 		<action name="addAdminAction" class="addAdminAction">
+			<result name="success">/Manage/Manage_skip5.jsp</result>
+			<result name="input">/Manage/Manage_skip6.jsp</result>
+ 		</action>
+ 		<action name="adminDeleteProType" class="adminDeleteProType">
+			<result name="success">/Manage/Manage_skip5.jsp</result>
+			<result name="input">/Manage/Manage_skip6.jsp</result>
+ 		</action>
+ 		<action name="addAdmin" class="addAdmin">
+			<result name="success">/Manage/Manage_skip13.jsp</result>
+			<result name="input">/Manage/Main_right_AddAdmin.jsp</result>
+ 		</action>
+ 		<action name="adminUpdateStatus" class="adminUpdateStatus">
+			<result name="success">/Manage/Main_right_QueryOrder.jsp</result>
+			<result name="input">/Manage/Main.jsp</result>
+		</action>
+		<action name="queryOrder" class="queryOrder">
+			<result name="success">/Manage/Main_right_QueryOrder.jsp</result>
+			<result name="input">/Manage/Main_right_QueryOrder.jsp</result>
+		</action>
+		<action name="queryOrderByKey" class="queryOrderByKey">
+			<result name="success">/Manage/Main_right_QueryResult.jsp</result>
+			<result name="input">/Manage/Main_right_Faild.jsp</result>
+		</action>
+		<action name="queryRole" class="queryRole">
+ 			<result name="success">/Manage/Main_right_AddAdmin.jsp</result>
+		</action>
+		<action name="queryEvaAdmin" class="queryEvaAdmin" >
+			<result name="success">/Manage/Main_right_productEva.jsp</result>
+			<result name="input">/Manage/Main_right_productEva.jsp</result>
+		</action>
+		<action name="adminDeleteEva" class="queryEvaAdmin" method="deleteEva">
+			<result name="success">/Manage/Eva_skip.jsp</result>
+		</action>
+		<action name="adminQueryOrderById" class="adminQueryOrderById">
+			<result name="success">/Manage/Main_right_OrderDetails.jsp</result>
+			<result name="input">/Manage/Main_right_OrderDetails.jsp</result>
+		</action>
+		
+		<!--	顾客Action	-->
+		<!-- 注册Action -->
+		<action name="regCusAction" class="regCusAction">
+			<result name="success">/index.jsp</result>
+			<result name="input">/Foreground_register.jsp</result>
+		</action>
+		
+		<!-- 登录Action -->
+		<action name="logCusAction" class="logCusAction">
+			<result name="success">/index.jsp</result>
+			<result name="input">/Foreground_login.jsp</result>
+		</action>
+		
+		<!-- 修改密码Action -->
+		<action name="changePwdCusAction" class="changePwdCusAction">
+			<result name="success">//Skip/Foreground_skip7.jsp</result>
+			<result name="input">/Foreground_changePwd.jsp</result>
+		</action>
+		
+		<!-- 查找个人信息Action -->
+		<action name="queryByNameCusAction" class="queryByNameCusAction">
+			<result name="success">/Foreground_changeMsg.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		
+		<!-- 更新个人信息Action -->
+		<action name="updateCusAction" class="updateCusAction">
+			<result name="success">//Skip/Foreground_skip.jsp</result>
+			<result name="input">/Foreground_changeMsg.jsp</result>
+		</action>
+		
+		<!-- 添加顾客留言Action -->
+		<action name="addWordsCusAction" class="addWordsCusAction">
+			<result name="success">//Skip/Foreground_skip6.jsp</result>
+			<result name="input">/Foreground_customerWords.jsp</result>
+			<interceptor-ref name="mystack" />
+		</action>
+		
+		<!-- 新增地址Action -->
+		<action name="addConInfAction" class="addConInfAction">
+			<result name="success">//Skip/Foreground_skip2.jsp</result>
+			<result name="input">/Foreground_addConsignee.jsp</result>
+		</action>
+		
+		<!-- 查询地址Action -->
+		<action name="queryConInfAction" class="queryConInfAction">
+			<result name="success">/Foreground_queryConsignee.jsp</result>
+			<result name="input">//Skip/Foreground_skip4.jsp</result>
+			<interceptor-ref name="mystack" />
+		</action>
+		
+		<action name="queryAllConInf" class="queryConInfAction" method="queryAll"/>
+		
+		<action name="queryConByName" class="queryConInfAction" method="queryByName">
+			<result name="success">/CartAndOrder/CreateOrder.jsp</result>
+		</action>
+		
+		<!-- 删除地址Action -->
+		<action name="deleteConInfAction" class="deleteConInfAction">
+    		<result name="success">//Skip/Foreground_skip2.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		
+		<!-- 查询指定ID的地址Action -->
+		<action name="queryConInfAction2" class="queryConInfAction2">
+			<result name="success">/Foreground_updateConInf.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+
+		<!-- 更新地址Action -->
+		<action name="updateConInfAction" class="updateConInfAction">
+			<result name="success">//Skip/Foreground_skip2.jsp</result>
+			<result name="input">/Foreground_updateConInf.jsp</result>
+		</action>
+		
+		<!-- 查询当前登录用户的历史留言Action -->
+		<action name="queryWords" class="queryWords">
+			<result name="success">/Foreground_words.jsp</result>
+		</action>
+		
+		<!-- 退出登录Action -->
+		<action name="exitCusAction" class="exitCusAction">
+			<result name="success">/index.jsp</result>
+		</action>
+		
+		
+		
+		<!--	产品Action	-->
+		<!-- 查找所有产品Action -->
+		<action name="queryAllProduct" class="queryAllProduct">
+			<result name="success">/ShowProduct/Foreground_showAll.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		
+		<!-- 查找指定ID的产品Action -->
+		<action name="queryProductById" class="queryProductById">
+			<result name="success">/ShowProduct/Foreground_productDetail.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		
+		<!-- 查找排行前六的产品Action -->
+		<action name="queryTopSix" class="queryTopSix">
+			<result name="success">/ShowProduct/Foreground_saleTop6.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		
+		<!-- 按销量排行产品Action -->
+		<action name="queryAllSaleTop" class="queryAllTop" >
+			<result name="success">/ShowProduct/Foreground_allTop.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		
+		<!-- 按价格排行Action -->
+		<action name="queryAllPriceTop" class="queryAllTop" method="queryPrice">
+			<result name="priceS">/ShowProduct/Foreground_allTop.jsp</result>
+			<result name="priceI">/index.jsp</result>
+		</action>
+		
+		<!-- 按好评排行Action -->
+		<action name="queryAllPraiseTop" class="queryAllTop" method="queryPraise">
+			<result name="praiseS">/ShowProduct/Foreground_allTop.jsp</result>
+			<result name="praiseI">/index.jsp</result>
+		</action>
+		
+		<!-- 查询商品类别Action -->
+		<action name="queryType" class="queryType" >
+			<result name="success">/index.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		
+		<action name="queryType2" class="queryType" method="queryType">
+			<result name="success">/index.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		
+		<!-- 查询指定类型的产品Action -->
+		<action name="queryByType" class="queryByType">
+			<result name="success">/ShowProduct/Foreground_typeProduct.jsp</result>
+			<result name="input">/index.jsp</result>
+		</action>
+		
+		<!-- 查询我的收藏产品Action -->
+		<action name="queryCollect" class="queryCollect">
+			<result name="success">/ShowProduct/Foreground_allCollect.jsp</result>
+			<result name="input">/ShowProduct/skip.jsp</result>
+			<interceptor-ref name="mystack" />
+		</action>
+		
+		<!-- 查询目前商品的评价Action -->
+		<action name="queryProductEvaluate" class="queryProductEvaluate">
+			<result name="success">/ShowProduct/Foreground_evaluate.jsp</result>
+			<result name="input">/ShowProduct/Foreground_evaluate.jsp</result>
+		</action>
+		
+		<!-- 添加商品评价Action -->
+		<action name="addProductEvaluate" class="addProductEvaluate">
+			<result name="success">//Skip/Foreground_skip10.jsp</result>
+			<result name="input">//Skip/Foreground_skip11.jsp</result>
+			<interceptor-ref name="mystack" />
+		</action>
+		
+		<!-- 删除商品评价Action -->
+		<action name="deleteEva" class="queryProductEvaluate" method="deleteEva">
+			<result name="success" type="redirectAction">
+				<param name="actionName">queryProductEvaluate</param>
+			</result>
+			<interceptor-ref name="mystack" />
+		</action>
+		
+		<!-- 添加商品收藏Action -->
+		<action name="addProductCollect" class="addProductCollect">
+			<result name="success">//Skip/Foreground_skip8.jsp</result>
+			<result name="input">/index.jsp</result>
+			<interceptor-ref name="mystack" />
+		</action>
+		
+		<!-- 删除产品收藏Action -->
+		<action name="deleteProductCollect" class="deleteProductCollect">
+			<result name="success">//Skip/Foreground_skip3.jsp</result>
+			<result name="input">//Skip/Foreground_skip3.jsp</result>
+			<interceptor-ref name="mystack" />
+		</action>
+		
+		<!-- 商品点赞Action -->
+		<action name="updateProduct1" class="updateProduct1">
+			<result name="success">//Skip/Foreground_skip9.jsp</result>
+			<result name="input">/index.jsp</result>
+			<interceptor-ref name="mystack" />
+		</action>
+		
+		<!-- 按类别和名称查询商品Action -->
+		<action name="ProductQueryByNameAndType" class="ProductQueryByNameAndType">
+			<result name="success">/ShowProduct/Foreground_search.jsp</result>
+			<result name="input">/ShowProduct/skip2.jsp</result>
+		</action>
+		
+		
+		
+		<!-- 购物车Action -->
+		<!-- 添加商品Action -->
+		<action name="shoppingCart" class="shoppingCart">
+			<result name="success">//Skip/Foreground_skip12.jsp</result>
+			<interceptor-ref name="mystack" />
+		</action>
+		
+		<!-- 商品数量减1Action -->
+		<action name="shoppingCartReduce" class="shoppingCart" method="reduce">
+			<result name="success" type="redirectAction">
+				<param name="actionName">queryCart</param>
+			</result>
+		</action>
+		
+		<!-- 商品数量加1Action -->
+		<action name="shoppingCartAdd" class="shoppingCart" method="add">
+			<result name="success" type="redirectAction">
+				<param name="actionName">queryCart</param>
+			</result>
+		</action>
+		
+		<!-- 清除单条商品信息Action -->
+		<action name="shoppingCartDelete" class="shoppingCart" method="deleteOneInf">
+			<result name="success" type="redirectAction">
+				<param name="actionName">queryCart</param>
+			</result>
+		</action>
+		
+		<!-- 清除购物车Action -->
+		<action name="shoppingCartDeleteAll" class="shoppingCart" method="deleteAllInf">
+			<result name="success" type="redirectAction">
+				<param name="actionName">queryCart</param>
+			</result>
+		</action>
+		
+		<!-- 分页查询购物车商品信息Action -->
+		<action name="queryCart" class="shoppingCart" method="queryCart">
+			<result name="success">/CartAndOrder/ShoppingCartInf.jsp</result>
+			<result name="input">/Skip/skip.jsp</result>
+			<interceptor-ref name="mystack" />
+		</action>
+		
+		<action name="queryCartNoByPage" class="shoppingCart" method="queryCartNoByPage">
+			<result name="success">/CartAndOrder/CreateOrder.jsp</result>
+		</action>
+		
+		
+		
+		<!-- 订单Action -->
+		<!-- 创建订单Action -->
+		<action name="createOrder" class="createOrder">
+			<result name="success">/CartAndOrder/PayForOrder.jsp</result>
+			<result name="input">/Skip/skip3.jsp</result>
+			<result name="no_con">/Skip/skip2.jsp</result>
+		</action>
+		
+		<!-- 查询未付款的订单Action -->
+		<action name="queryNoPay" class="createOrder" method="queryNoPay">
+			<result name="success">/CartAndOrder/PayForOrder.jsp</result>
+			<result name="input">/Skip/skip5.jsp</result>
+			<interceptor-ref name="mystack" />
+		</action>
+		
+		<!-- 查询所有支付方式Action -->
+		<action name="queryAllPayment" class="createOrder" method="queryPayment">
+			<result name="success">/CartAndOrder/PayForOrder.jsp</result>
+			<result name="input">/CartAndOrder/PayForOrder.jsp</result>
+		</action>
+		
+		<!-- 支付订单Action -->
+		<action name="payForOrder" class="createOrder" method="payForOrder">
+			<result name="success">/CartAndOrder/OrderById.jsp</result>
+			<result name="input">/Skip/skip4.jsp</result>
+			<result name="no_p">/Skip/skip.jsp</result>
+		</action>
+		
+		<!-- 查询当前登录用户的所有订单Action -->
+		<action name="queryAllOrder" class="createOrder" method="queryAllOrder">
+			<result name="success">/CartAndOrder/AllOrder.jsp</result>
+			<result name="input">//Skip/skip7.jsp</result>
+			<interceptor-ref name="mystack" />
+		</action>
+		
+		<!-- 查询指定ID的订单Action -->
+		<action name="queryOrderById" class="createOrder" method="queryOrderById">
+			<result name="success">/CartAndOrder/OrderById.jsp</result>
+			<result name="input">/CartAndOrder/PayForOrder.jsp</result>
+		</action>
+		
+		<!-- 撤销还没付款的订单Action -->
+		<action name="deleteOrderById" class="createOrder" method="deleteOrderById">
+			<result name="success">/CartAndOrder/CreateOrder.jsp</result>
+		</action>
+		
+		<!--  根据订单状态查询当前登录用户的订单Action -->
+		<action name="queryByStatus2" class="createOrder" method="queryByStatus2">
+			<result name="success">/CartAndOrder/StatusOrder.jsp</result>
+			<result name="input">/Skip/skip6.jsp</result>
+		</action>
+		
+		<action name="queryByStatus3" class="createOrder" method="queryByStatus3">
+			<result name="success">/CartAndOrder/StatusOrder.jsp</result>
+			<result name="input">//Skip/skip6.jsp</result>
+		</action>
+		
+		<action name="queryByStatus4" class="createOrder" method="queryByStatus4">
+			<result name="success">/CartAndOrder/StatusOrder.jsp</result>
+			<result name="input">/Skip/skip6.jsp</result>
+		</action>
+		
+		<action name="queryByStatus5" class="createOrder" method="queryByStatus5">
+			<result name="success">/CartAndOrder/StatusOrder.jsp</result>
+			<result name="input">/Skip/skip6.jsp</result>
+		</action>
+		
+		<action name="queryByStatus" class="createOrder" method="queryByStatus">
+			<result name="success">/CartAndOrder/StatusOrder.jsp</result>
+			<result name="input">/Skip/skip6.jsp</result>
+		</action>
+		
+		<!--  模糊查询当前登录用户的订单Action -->
+		<action name="queryByAll" class="createOrder" method="queryByAll">
+			<result name="success">/CartAndOrder/QueryByOtherOrder.jsp</result>
+			<result name="input">/Skip/skip6.jsp</result>
+		</action>
+ 	</package>
+ </struts>

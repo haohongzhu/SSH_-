@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!--配置bean -->
+	<!-- 普通JDBC连接，取代 hiberbnate.cfg.xml -->
+	<bean id="candy" class="org.apache.commons.dbcp.BasicDataSource">
+		<!-- 驱动程序 -->
+		<property name="driverClassName"
+			value="com.microsoft.sqlserver.jdbc.SQLServerDriver">
+		</property>
+		
+		<!--<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		--><!-- 连接字符串 -->
+		<property name="url"
+			value="jdbc:sqlserver://localhost:1433;DatabaseName=DBZhu">
+		</property>
+		
+		<!--<property name="url"
+			value="jdbc:mysql://127.0.0.1:3306/guns?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=false&amp;serverTimezone=CTT">
+		</property>
+		-->
+		<property name="username" value="sa"></property>
+		<property name="password" value="123456"></property>
+	</bean>
+	<!-- 创建SessionFactory，取代HiberbnateSessionFactory.java -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<!-- setter注入 -->
+		<property name="dataSource">
+			<ref bean="candy" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect"> 
+				<!-- 数据库方言 -->
+				
+					org.hibernate.dialect.SQLServerDialect
+					<!-- org.hibernate.dialect.MySQLDialect  -->
+				</prop>
+				<prop key="hibernate.jdbc.use_scrollable_resultset"><!-- 结果滚动集 -->
+					false
+				</prop>
+			</props>
+		</property>
+		<!-- 说明持久化类映射文件 -->
+		<property name="mappingResources">
+			<list>
+				<value>com/customer/models/Customer.hbm.xml</value>
+				<value>com/customer/models/CustomerWords.hbm.xml</value>
+				<value>com/customer/models/ConsigneeInf.hbm.xml</value>
+				<value>com/product/models/Product.hbm.xml</value>
+				<value>com/product/models/ProductType.hbm.xml</value>
+				<value>com/product/models/ProductClass.hbm.xml</value>
+				<value>com/product/models/ProductEvaluate.hbm.xml</value>
+				<value>com/product/models/ProductCollect.hbm.xml</value>
+				<value>com/order/models/ShoppingCart.hbm.xml</value>
+				<value>com/order/models/ShoppingCartInf.hbm.xml</value>
+				<value>com/order/models/Order.hbm.xml</value>
+				<value>com/order/models/PaymentType.hbm.xml</value>
+				<value>com/admin/models/Admin.hbm.xml</value>
+				<value>com/admin/models/Role.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+</beans>

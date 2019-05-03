@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<!-- Action的bean -->
+	<bean id="adminLoginAction" class="com.admin.action.AdminLoginAction" scope="prototype">
+		<property name="ad">
+			<ref bean="adminDao"/>
+		</property>
+	</bean>
+	<bean id="adminQueryAllAction" class="com.admin.action.AdminQueryAllAction">
+		<property name="ad">
+			<ref bean="adminDao"/>
+		</property>
+	</bean>
+	<bean id="adminDeleteWordAction" class="com.admin.action.AdminDeleteWordAction">
+		<property name="ad">
+			<ref bean="adminDao"/>
+		</property>
+	</bean>
+	<bean id="adminQueryByNameAction" class="com.admin.action.AdminQueryByNameAction">
+		<property name="ad">
+			<ref bean="adminDao"/>
+		</property>
+	</bean>
+	<bean id="adminQueryCusInfAction" class="com.admin.action.AdminQueryCusInfAction">
+		<property name="ad">
+			<ref bean="adminDao"/>
+		</property>
+	</bean>
+	<bean id="adminQueryCusInfByNameAction" class="com.admin.action.AdminQueryCusInfByNameAction">
+		<property name="ad">
+			<ref bean="adminDao"/>
+		</property>
+	</bean>
+	<bean id="adminDeleteCusInfAction" class="com.admin.action.AdminDeleteCusInfAction">
+		<property name="ad">
+			<ref bean="adminDao"/>
+		</property>
+	</bean>
+	 <bean id="adminCheckImgAction" class="com.admin.action.AdminCheckImgAction" scope="prototype">        
+    </bean>
+    <bean id="updateAdminAction" class="com.admin.action.UpdateAdminAction" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="queryAdminAction" class="com.admin.action.QueryAdminAction" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="adminChangePwdAction" class="com.admin.action.AdminChangePwdAction" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="adminAddProduct" class="com.admin.action.AdminAddProduct" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="adminQueryProType" class="com.admin.action.AdminQueryProType" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="adminQueryTypeName" class="com.admin.action.AdminQueryTypeName" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="adminAddTypeMethod" class="com.admin.action.AdminAddTypeMethod" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="adminAddTypeName" class="com.admin.action.AdminAddTypeName" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="adminAddProQuery" class="com.admin.action.AdminAddProQuery" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="adminQueryProAll" class="com.admin.action.AdminQueryProAll" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="adminQueryProById" class="com.admin.action.AdminQueryProById" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="updateAdminProduct" class="com.admin.action.UpdateAdminProduct" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="adminDeleteProduct" class="com.admin.action.AdminDeleteProduct" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="adminSumOfOrder" class="com.admin.action.AdminSumOfOrder" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+   <bean id="adminQueryAllUser" class="com.admin.action.AdminQueryAllUser" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="queryAdminById" class="com.admin.action.QueryAdminById" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="adminQueryProTypeAll" class="com.admin.action.AdminQueryProTypeAll" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="adminDeleteProType" class="com.admin.action.AdminDeleteProType" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="addAdmin" class="com.admin.action.addAdminAction" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="adminUpdateStatus" class="com.admin.action.adminUpdateStatusAction" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="queryOrder" class="com.admin.action.queryOrderAction" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="queryOrderByKey" class="com.admin.action.queryOrderByKeyAction" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="queryRole" class="com.admin.action.queryRole" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>     
+    </bean>
+    <bean id="queryEvaAdmin" class="com.admin.action.AdminQueryEva" scope="prototype">   
+    	<property name="ad">
+			<ref bean="adminDao"/>
+		</property>  
+    </bean>
+    <bean id="adminQueryOrderById" class="com.admin.action.adminQueryOrderById" scope="prototype">
+		<property name="ad">
+			<ref bean="adminDao"/>
+		</property>
+	</bean>
+	<bean id="deleteAdminById" class="com.admin.action.AdminDeleteById" scope="prototype">
+		<property name="ad">
+			<ref bean="adminDao"/>
+		</property>
+	</bean>
+	
+	<!-- 顾客Bean -->
+	<bean id="regCusAction" class="com.customer.action.CustomerRegAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="logCusAction" class="com.customer.action.CustomerLogAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="changePwdCusAction" class="com.customer.action.CustomerChangePwdAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="queryByNameCusAction" class="com.customer.action.CustomerQueryByNameAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="updateCusAction" class="com.customer.action.CustomerUpdateInfAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="addWordsCusAction" class="com.customer.action.CustomerAddWordsAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="addConInfAction" class="com.customer.action.ConsigneeAddInfAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="queryConInfAction" class="com.customer.action.ConsigneeQueryByCidAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="queryConInfAction2" class="com.customer.action.ConsigneeQueryByIdAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="updateConInfAction" class="com.customer.action.ConsigneeUpdateInfAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="deleteConInfAction" class="com.customer.action.ConsigneeInfDeleteAction" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="queryWords" class="com.customer.action.CustomerQueryWords" scope="prototype">
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+	
+	<bean id="exitCusAction" class="com.customer.action.CustomerExitAction" scope="prototype">
+	</bean>
+	
+	
+	
+	<!-- 产品Bean -->
+	<bean id="queryAllProduct" class="com.product.action.ProductQueryAllAction" scope="prototype">
+		<property name="pd">
+			<ref bean="productDao"/>
+		</property>
+	</bean>
+	
+	<bean id="queryProductById" class="com.product.action.ProductQueryByIdAction" scope="prototype">
+		<property name="pd">
+			<ref bean="productDao"/>
+		</property>
+	</bean>
+
+	<bean id="queryTopSix" class="com.product.action.ProductQueryTopAction" scope="prototype">
+		<property name="pd">
+			<ref bean="productDao"/>
+		</property>
+	</bean>
+	
+	<bean id="queryAllTop" class="com.product.action.ProductQueryAllTopAction" scope="prototype">
+		<property name="pd">
+			<ref bean="productDao"/>
+		</property>
+	</bean>
+	
+	<bean id="queryType" class="com.product.action.ProductQueryTypeAction" scope="prototype">
+		<property name="pd">
+			<ref bean="productDao"/>
+		</property>
+	</bean>
+	
+	<bean id="queryByType" class="com.product.action.ProductQueryByTypeAction" scope="prototype">
+		<property name="pd">
+			<ref bean="productDao"/>
+		</property>
+	</bean>
+	
+	<bean id="queryProductEvaluate" class="com.product.action.ProductQueryEvaluateAction" scope="prototype">
+		<property name="pd">
+			<ref bean="productDao"/>
+		</property>
+	</bean>
+	
+	<bean id="queryCollect" class="com.product.action.ProductQueryCollectAction" scope="prototype">
+		<property name="pd">
+			<ref bean="productDao"/>
+		</property>
+	</bean>
+	
+	<bean id="updateProduct1" class="com.product.action.ProductUpdatePraiseAction" scope="prototype">
+		<property name="pd">
+			<ref bean="productDao"/>
+		</property>
+	</bean>
+	
+	<bean id="addProductEvaluate" class="com.product.action.ProductAddEvaluateAtion" scope="prototype">
+		<property name="pd">
+			<ref bean="productDao"/>
+		</property>
+	</bean>
+	
+	<bean id="addProductCollect" class="com.product.action.ProductAddCollectAction" scope="prototype">
+		<property name="pd">
+			<ref bean="productDao"/>
+		</property>
+	</bean>
+	
+	<bean id="deleteProductCollect" class="com.product.action.ProductDeleteCollectAction" scope="prototype">
+		<property name="pd">
+			<ref bean="productDao"/>
+		</property>
+	</bean>
+	
+	<bean id="ProductQueryByNameAndType" class="com.product.action.ProductQueryByNameAndType" scope="prototype">
+		<property name="pd">
+			<ref bean="productDao"/>
+		</property>
+	</bean>
+	
+	
+	<!-- 购物车与订单bean -->
+	<bean id="shoppingCart" class="com.order.action.ShoppingCartAction" scope="prototype">
+		<property name="od">
+			<ref bean="orderDao"/>
+		</property>
+	</bean>
+	
+	<bean id="sumOfOrder" class="com.order.action.SumOfOrder" scope="prototype">
+		<property name="od">
+			<ref bean="orderDao"/>
+		</property>
+		<property name="pd">
+			<ref bean="productDao"/>
+		</property>
+	</bean>
+	
+	<bean id="createOrder" class="com.order.action.OrderAction" scope="prototype">
+		<property name="od">
+			<ref bean="orderDao"/>
+		</property>
+		<property name="cd">
+			<ref bean="customerDao"/>
+		</property>
+	</bean>
+</beans>

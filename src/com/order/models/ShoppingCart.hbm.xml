@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.order.models.ShoppingCart" table="Table_ShoppingCart">
+		<id name="id" column="id" >
+			<generator class="native"/>
+		</id>
+		<many-to-one name="customerID5" class="com.customer.models.Customer" column="customerID" unique="true"/>
+		<property name="totalCount" />
+		<property name="totalPrice" />
+		<property name="cartStatus" />
+		<set name="setCartInf" table="Table_ShoppingCartInf" lazy="false" cascade="save-update">
+			<key column="cartID"></key>
+			<one-to-many class="com.order.models.ShoppingCartInf"/>
+		</set>
+	</class>
+</hibernate-mapping>

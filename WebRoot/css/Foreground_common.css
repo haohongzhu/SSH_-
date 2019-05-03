@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+*{
+	margin:0px; 
+	padding:0px;
+	text-decoration: none;
+	}
+#common_header{
+	width:100%;
+	height:200px;
+	}
+#common_footer{
+	width:100%;
+	height:200px;
+	}
+#common_top{
+	margin-left:250px;
+	height:20px;
+	padding-top:5px;
+	color:#9E9E9E;
+	}
+#common_top_menu{
+	width:1000px;
+	height:100px;
+	margin-left:260px;
+	margin-top:20px;
+	}	
+#common_left_menu{
+	width:200px;
+	height:800px;
+	float:left;
+	margin-top:50px;
+	margin-left:260px;
+	}

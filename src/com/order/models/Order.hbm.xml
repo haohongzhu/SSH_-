@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.order.models.Order" table="Table_Order">
+		<id name="id" column="id" >
+			<generator class="native"/>
+		</id>
+		<many-to-one name="order_cartID" class="com.order.models.ShoppingCart" column="cartID" unique="true" lazy="false"/>
+		<many-to-one name="order_customer" class="com.customer.models.Customer" column="customer" unique="true" lazy="false"/>
+		<many-to-one name="order_consignee" class="com.customer.models.ConsigneeInf" column="consignee" unique="true" lazy="false"/>
+		<property name="orderTime" />
+		<many-to-one name="order_payment" class="com.order.models.PaymentType" column="paymentType" unique="true" lazy="false"/>
+		<property name="orderStatus" />
+		<property name="note" />
+	</class>
+</hibernate-mapping>

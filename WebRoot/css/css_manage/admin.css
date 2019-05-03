@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+
+#orderList{
+	width:100%;
+	height:100%;
+}
+#orderList_search{
+	float:right;
+}
+#orderList_table{
+	font-size:28px;
+	cellpadding:10px;
+	cellspacing:20px;
+	text-align:center;
+	padding-left: 17px;
+	margin:0 auto;
+	border-collapse: collapse
+}
+#orderList_table th{
+	font-size:28px;
+	font-weight:400;
+}
+#orderList_table td{
+	font-weight:200;
+	border-bottom:solid 1px #add9c0;
+	min-width:100px;
+}
+#orderList a{
+	text-decoration:none;
+	color:gray;
+}
+#orderList a:hover{color:red;}
+#orderDetail{
+	
+}
+#orderDetail_table{
+	font-size:24px;
+	font-weight:normal;
+	padding-left: 17px;
+	padding-right: 17px;
+	border-collapse: collapse;
+	border:solid 15px black;
+}
+#orderDetail_table td{
+	border:solid 1px black;
+}
+#orderDetail a{
+	text-decoration:none;
+	color:gray;
+}
+#orderDetail a:hover{color:red;}
